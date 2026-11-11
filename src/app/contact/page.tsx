@@ -35,23 +35,32 @@ export default function ContactPage() {
       <div className="px-8 md:px-16 lg:px-24">
         {/* Page Title */}
         <h1 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-          Contact.
+          Let&apos;s Talk.
         </h1>
 
-        {/* Email Info */}
+        {/* Contact Details */}
         <p className="text-lg mb-4">
-          I welcome academic collaboration, speaking engagements, and research
-          partnerships.
+          Ready to collaborate? Let&apos;s connect and discuss how we can build
+          something amazing together.
         </p>
-        <p className="text-lg mb-12">
-          {/* Reach me at{" "}
+        <p className="text-lg mb-2">
           <a
-            href="mailto:diana.imoli@kemri.go.ke"
+            href="mailto:muganzijames.ai.dev@gmail.com"
             className="font-bold hover:opacity-70 transition-opacity"
           >
-            diana.imoli@kemri.go.ke
-          </a> */}
-          <span className="text-gray-600">Diana Imoli — Nairobi, Kenya</span>
+            muganzijames.ai.dev@gmail.com
+          </a>
+        </p>
+        <p className="text-lg mb-2">
+          <a
+            href="tel:+254798848862"
+            className="font-bold hover:opacity-70 transition-opacity"
+          >
+            +254 798 848 862
+          </a>
+        </p>
+        <p className="text-lg mb-12 text-gray-600">
+          Nairobi, Kenya || Eldoret, Kenya
         </p>
 
         {/* Contact Form */}
@@ -61,7 +70,7 @@ export default function ContactPage() {
             <input
               type="text"
               name="name"
-              placeholder="Name"
+              placeholder="Enter your full name"
               value={formData.name}
               onChange={handleChange}
               required
@@ -74,7 +83,7 @@ export default function ContactPage() {
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Enter your email address"
               value={formData.email}
               onChange={handleChange}
               required
@@ -86,7 +95,7 @@ export default function ContactPage() {
           <div>
             <textarea
               name="message"
-              placeholder="Message"
+              placeholder="Tell me about your project or idea..."
               value={formData.message}
               onChange={handleChange}
               required
@@ -97,7 +106,7 @@ export default function ContactPage() {
 
           {/* Submit Button */}
           <button type="submit" className="btn-primary">
-            Send Message
+            Submit
           </button>
         </form>
       </div>

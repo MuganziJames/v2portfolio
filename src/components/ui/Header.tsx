@@ -11,7 +11,7 @@ export default function Header() {
 
   const navLinks = [
     { href: "/about", label: "About" },
-    { href: "/projects", label: "Research" },
+    { href: "/projects", label: "Projects" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -26,7 +26,7 @@ export default function Header() {
       <header className="flex items-center justify-between px-8 py-6 md:px-16 lg:px-24 relative z-50">
         {/* Logo */}
         <Link href="/" className="text-3xl font-bold" aria-label="Home">
-          ✻
+          JM
         </Link>
 
         {/* Desktop Navigation */}

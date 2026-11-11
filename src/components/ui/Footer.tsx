@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { SiUpwork } from "react-icons/si";
 
 interface FooterProps {
   ctaText?: string;
@@ -10,8 +12,28 @@ export default function Footer({ ctaText, ctaHref }: FooterProps) {
   const socialLinks = [
     {
       icon: FaLinkedinIn,
-      href: "https://www.linkedin.com/in/diana-imoli-67829812a/",
+      href: "https://www.linkedin.com/in/jamesmuganzi/",
       label: "LinkedIn",
+    },
+    {
+      icon: FaGithub,
+      href: "https://github.com/MuganziJames",
+      label: "GitHub",
+    },
+    {
+      icon: FaXTwitter,
+      href: "https://x.com/_muganzi",
+      label: "X",
+    },
+    {
+      icon: SiUpwork,
+      href: "https://www.upwork.com/freelancers/~01272550c440f21a6f",
+      label: "Upwork",
+    },
+    {
+      icon: FaWhatsapp,
+      href: "https://wa.me/254798848862",
+      label: "WhatsApp",
     },
   ];
 
@@ -37,6 +59,7 @@ export default function Footer({ ctaText, ctaHref }: FooterProps) {
             rel="noopener noreferrer"
             className="text-lg transition-opacity hover:opacity-60"
             aria-label={social.label}
+            title={social.label}
           >
             <social.icon />
           </a>

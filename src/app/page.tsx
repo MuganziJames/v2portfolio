@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <PageLayout
-      watermarkText="DIANA"
+      watermarkText="JAMES"
       footerCtaText="See More About Me"
       footerCtaHref="/about"
       noScroll={true}
@@ -13,33 +13,33 @@ export default function Home() {
         <section className="px-8 md:px-16 lg:px-24 flex-1 flex flex-col justify-center">
           {/* Large Name Heading */}
           <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl lg:text-5xl font-bold tracking-[0.2em] uppercase mb-4 md:mb-6">
-            DIANA IMOLI, MSc
+            JAMES MUGANZI
           </h1>
 
           {/* Introduction Paragraphs */}
           <div className="max-w-4xl space-y-3 md:space-y-4 text-sm md:text-base lg:text-lg leading-relaxed">
             <p>
-              Biotechnologist | Microbiologist | Scientific Researcher at KEMRI.
-              I am dedicated to antimicrobial resistance research, genomic
-              characterization of pathogens, and laboratory quality assurance
-              through
+              Backend Engineer with hands-on experience building production-grade
+              APIs, asynchronous services, AI-enabled workflows, automation
+              systems and data-intensive applications. I turn complex problems
+              into reliable software through
               <Link href="/projects" className="inline-link mx-1">
-                RESEARCH
+                PROJECTS
               </Link>
-              that informs public health interventions in Kenya and East Africa.
+              that solve real-world problems.
             </p>
 
             <p>
-              My work spans outbreak genomics, field surveillance, and
-              interventions bridging laboratory insights with real-world
+              I build intelligent, data-driven tools for climate, health, jobs,
+              mobility and sustainable development. Explore my
               <Link href="/about" className="inline-link mx-1">
-                IMPACT
+                EXPERIENCE
               </Link>
-              contributing to scientific evidence used by policymakers.
-              Interested in collaboration? Feel free to
+              and selected work, or
               <Link href="/contact" className="inline-link mx-1">
                 CONTACT ME
               </Link>
+              to discuss an idea.
             </p>
           </div>
         </section>

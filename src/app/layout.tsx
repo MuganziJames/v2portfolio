@@ -14,8 +14,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Diana Portfolio",
-  description: "Frontend Developer & UX Architect Portfolio",
+  title: "James Muganzi - Python Backend Engineer",
+  description:
+    "Backend Engineer building production-grade APIs, asynchronous services, AI-enabled workflows, automation systems and data-intensive applications.",
 };
 
 export default function RootLayout({

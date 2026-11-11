@@ -1,112 +1,141 @@
 import PageLayout from "@/components/layout/PageLayout";
 import Link from "next/link";
-import { HiOutlineExternalLink } from "react-icons/hi";
-import { BsCalendar, BsBriefcase } from "react-icons/bs";
-import { FaMicroscope, FaDna, FaFlask } from "react-icons/fa";
+import { BsBriefcase, BsCodeSlash } from "react-icons/bs";
+import { FaBrain, FaDatabase, FaServer } from "react-icons/fa";
 
 // Expertise data
 const skills = [
   {
-    title: "Laboratory Quality Assurance",
-    icon: <FaFlask className="ml-1 inline" />,
-    link: { text: "View Research", href: "/projects" },
-    description:
-      "With rigorous training in laboratory protocols and quality management systems, I ensure accuracy and reliability in microbiological testing. My expertise spans biosafety practices, equipment calibration, and compliance with national and international laboratory standards — critical for producing trustworthy research outcomes.",
-  },
-  {
-    title: "Microbial Genomics",
-    icon: <FaDna className="ml-1 inline" />,
-    link: { text: "View Publications", href: "/projects" },
-    description:
-      "I specialize in genomic characterization of pathogens, utilizing next-generation sequencing and bioinformatics tools to understand antimicrobial resistance mechanisms. This work provides critical insights into outbreak dynamics and informs surveillance strategies across East Africa.",
-  },
-  {
-    title: "Antimicrobial Resistance Research",
-    icon: <FaMicroscope className="ml-1 inline" />,
+    title: "Backend Engineering & APIs",
+    icon: <FaServer className="ml-1 inline" />,
     link: { text: "View Projects", href: "/projects" },
     description:
-      "As a researcher at KEMRI, I lead and collaborate on projects addressing the growing threat of antimicrobial resistance (AMR). My work bridges laboratory findings with public health policy, contributing to evidence-based interventions that strengthen health systems in Kenya and the wider region.",
+      "I build production-grade APIs, asynchronous services and data-intensive applications with Python and modern backend tools. My focus is on reliable architecture, secure integrations, clear interfaces and systems that can support real users and real operational needs.",
+  },
+  {
+    title: "AI, Data & Automation",
+    icon: <FaBrain className="ml-1 inline" />,
+    link: { text: "Explore My Work", href: "/projects" },
+    description:
+      "I combine data science, machine learning, natural language processing and AI-enabled workflows to turn complex information into useful decisions. I have worked on intelligent job matching, climate intelligence, nutrition planning, career support and automated research workflows.",
+  },
+  {
+    title: "Production Systems & Impact",
+    icon: <FaDatabase className="ml-1 inline" />,
+    link: { text: "Let's Collaborate", href: "/contact" },
+    description:
+      "I enjoy building technology that connects engineering quality with community needs. My projects span climate, health, jobs, mobility and sustainable development, with an emphasis on automation, accessibility, measurable outcomes and solutions that create meaningful impact in Africa.",
   },
 ];
 
 // Experience data
 const experience = [
   {
-    title: "Scientific Researcher",
-    company: "Kenya Medical Research Institute (KEMRI)",
-    type: "Full-Time",
-    period: "February 2021 – Present",
-    location: "Nairobi, Kenya",
-    description:
-      "Contributing to nationally significant biomedical and public health research. Focus areas include microbiology, AMR, genomic characterization, and laboratory quality assurance. Actively involved in outbreak investigations, surveillance, and vaccine research trials.",
-    skills: [
-      "Laboratory Quality Assurance",
-      "Microbial Genomics",
-      "AMR Research",
-      "Scientific Communication",
-    ],
-  },
-  {
-    title: "Customer Service Advocate",
-    company: "Tala",
+    title: "Researcher",
+    company: "CloudFactory",
     type: "Contract",
-    period: "September 2018 – November 2019",
-    location: "Nairobi, Kenya",
+    period: "Nov 2025 - Present",
+    location: "Remote · Nairobi County, Kenya",
     description:
-      "Developed strong professional skills in communication, problem-solving, and client engagement within a technology-driven environment. Managed diverse stakeholder needs while ensuring data protection compliance.",
+      "Verify public-source information through a seven-stage research, cross-checking and classification process before converting findings into operational records. Process 50+ research records per work cycle, cross-check 10-15 independent sources, audit records for completeness and maintain source links, exception notes and verification evidence for distributed teams.",
     skills: [
-      "Customer Experience",
-      "Professional Communication",
-      "Data Handling",
-      "Process Improvement",
+      "Research Verification",
+      "Source Traceability",
+      "Data Classification",
+      "Quality Auditing",
     ],
   },
   {
-    title: "Internship Trainee",
-    company: "Kenya Plant Health Inspectorate Service (KEPHIS)",
-    type: "Internship",
-    period: "September 2017 – August 2018",
-    location: "Nairobi, Kenya",
+    title: "Backend",
+    company: "Blueprint AI",
+    type: "Professional Experience",
+    period: "",
+    location: "",
     description:
-      "Gained foundational hands-on experience in laboratory procedures, quality control, and biosafety practices. Supported plant health analyses and inspection processes essential for agricultural protection.",
-    skills: [
-      "Laboratory Techniques",
-      "Biosafety Practices",
-      "Quality Control",
-      "Regulatory Compliance",
-    ],
+      "Backend engineering experience contributing to AI-enabled workflows, production services and data-driven applications.",
+    skills: ["Python", "APIs", "Automation"],
+  },
+  {
+    title: "Data Science",
+    company: "Blueprint AI",
+    type: "Professional Experience",
+    period: "",
+    location: "",
+    description:
+      "Data science experience focused on turning complex data into insights and practical tools that support better decisions.",
+    skills: ["Data Science", "Machine Learning", "Data Analysis"],
+  },
+  {
+    title: "Technology Contributor",
+    company: "Mentor Me Collective",
+    type: "Professional Experience",
+    period: "",
+    location: "",
+    description:
+      "Contributed to technology and community-focused work through collaboration, problem solving and practical software development.",
+    skills: ["Collaboration", "Problem Solving", "Community"],
+  },
+  {
+    title: "AI/ML",
+    company: "PLP",
+    type: "Professional Experience",
+    period: "",
+    location: "",
+    description:
+      "Applied artificial intelligence and machine learning skills through practical projects and collaborative development work.",
+    skills: ["Artificial Intelligence", "Machine Learning", "Python"],
+  },
+  {
+    title: "Developer",
+    company: "PLP",
+    type: "Professional Experience",
+    period: "",
+    location: "",
+    description:
+      "Built software projects while strengthening full-stack development, teamwork, version control and delivery skills.",
+    skills: ["Software Development", "Git/GitHub", "Teamwork"],
+  },
+  {
+    title: "Technology Professional",
+    company: "TechCrush",
+    type: "Professional Experience",
+    period: "",
+    location: "",
+    description:
+      "Worked across software and mobile development projects with a focus on building useful digital products and learning through collaborative engineering.",
+    skills: ["React Native", "TypeScript", "Mobile Development"],
   },
 ];
 
-// Education & Certifications
+// Skills grouped for the existing skills list design
 const reads = [
   {
-    title: "Master of Science in Microbiology",
-    source: "Kenyatta University",
-    year: "2020 - 2023",
+    title: "Backend & Development",
+    source: "Python · Flask · Django · REST APIs",
+    year: "Core stack",
     description:
-      "Advanced study in microbial genetics, pathogenesis, and laboratory research methodologies. Thesis focused on antimicrobial resistance patterns in clinical isolates.",
+      "Python, Flask, Django, REST API development, asynchronous services, JWT authentication, role-based access control and secure application architecture.",
   },
   {
-    title: "Bachelor of Science in Biotechnology & Biosafety",
-    source: "University of Eldoret",
-    year: "2014 - 2018",
+    title: "AI & Machine Learning",
+    source: "ML · NLP · Deep Learning",
+    year: "Core stack",
     description:
-      "Comprehensive foundation in molecular biology, genetic engineering, biosafety regulations, and biotechnological applications in health and agriculture.",
+      "Data Science, Machine Learning, Deep Learning, Natural Language Processing, TensorFlow, PyTorch and OpenAI-powered workflows.",
   },
   {
-    title: "CPHIA 2025 Young Investigator Award",
-    source: "Africa CDC",
-    year: "2025",
+    title: "Data & Visualization",
+    source: "SQL · Pandas · NumPy",
+    year: "Core stack",
     description:
-      "Awarded for innovative contributions to antimicrobial resistance research and outstanding scientific impact in public health.",
+      "SQL, PostgreSQL, Pandas, NumPy, Scikit-learn, data modeling, data visualization and tools for building clear, data-driven insights.",
   },
   {
-    title: "Best Presentation (AMR Session)",
-    source: "Kenya AMR Scientific Symposium, KEMRI",
-    year: "2024",
+    title: "Tools & Delivery",
+    source: "Cloud · Git · Streamlit",
+    year: "Core stack",
     description:
-      "Recognized for excellence in presenting research findings on antimicrobial resistance at the national scientific symposium.",
+      "Streamlit, Git/GitHub, cloud basics, Docker, deployment workflows and the practical tools needed to take ideas from development to usable products.",
   },
 ];
 
@@ -114,7 +143,7 @@ export default function AboutPage() {
   return (
     <PageLayout
       watermarkText="About Me."
-      footerCtaText="Lets Continue To Projects"
+      footerCtaText="Let's Continue To Projects"
       footerCtaHref="/projects"
     >
       <div className="px-8 md:px-16 lg:px-24">
@@ -152,6 +181,7 @@ export default function AboutPage() {
             </div>
           ))}
         </section>
+
         {/* Experience Section */}
         <section className="mb-24">
           <h3 className="font-[family-name:var(--font-playfair)] text-3xl font-semibold mb-12">
@@ -176,14 +206,18 @@ export default function AboutPage() {
                         — {exp.company}
                       </span>
                     </h4>
-                    <p className="text-sm text-gray-500 pl-6 mt-1">
-                      {exp.type} · {exp.location}
-                    </p>
+                    {(exp.type || exp.location) && (
+                      <p className="text-sm text-gray-500 pl-6 mt-1">
+                        {[exp.type, exp.location].filter(Boolean).join(" · ")}
+                      </p>
+                    )}
                   </div>
-                  <div className="flex items-center gap-2 text-sm pl-6 md:pl-0">
-                    <BsBriefcase />
-                    {exp.period}
-                  </div>
+                  {exp.period && (
+                    <div className="flex items-center gap-2 text-sm pl-6 md:pl-0">
+                      <BsBriefcase />
+                      {exp.period}
+                    </div>
+                  )}
                 </div>
                 <p className="text-base leading-relaxed max-w-5xl pl-6 text-gray-700 mb-3">
                   {exp.description}
@@ -199,14 +233,14 @@ export default function AboutPage() {
             ))}
           </div>
         </section>
-        {/* My Reads Section */}
+
+        {/* My Skills Section */}
         <section className="mb-24">
           <h3 className="font-[family-name:var(--font-playfair)] text-3xl font-semibold mb-12">
-            Education & Recognition.
+            My Skills.
           </h3>
 
           <div className="space-y-8 relative">
-            {/* Vertical Line */}
             <div className="absolute left-[4px] top-0 bottom-0 w-[1px] bg-black/10"></div>
 
             {reads.map((read) => (
@@ -215,7 +249,7 @@ export default function AboutPage() {
                 className="border-t border-black/10 pt-6 relative"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <h4 className="text-xl font-semibold flex items-center">
+                  <h4 className="text-xl font-semibold flex items-center flex-wrap">
                     <span className="section-bullet"></span>
                     {read.title}
                     <span className="font-normal text-gray-500 ml-2">
@@ -223,7 +257,7 @@ export default function AboutPage() {
                     </span>
                   </h4>
                   <div className="flex items-center gap-2 text-sm">
-                    <BsCalendar />
+                    <BsCodeSlash />
                     {read.year}
                   </div>
                 </div>
