@@ -17,6 +17,12 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    e.currentTarget.style.height = "auto";
+    e.currentTarget.style.height = `${e.currentTarget.scrollHeight}px`;
+    handleChange(e);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission - you can integrate with your preferred email service
@@ -98,10 +104,10 @@ export default function ContactPage() {
               name="message"
               placeholder="Tell me about your project or idea..."
               value={formData.message}
-              onChange={handleChange}
+              onChange={handleMessageChange}
               required
-              rows={6}
-              className="form-input resize-none"
+              rows={1}
+              className="form-input resize-none overflow-hidden"
             />
           </div>
 
