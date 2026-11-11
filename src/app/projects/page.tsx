@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { type ReactNode, useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import MobileMenu from "@/components/ui/MobileMenu";
 import { FaGithub } from "react-icons/fa";
@@ -17,6 +17,7 @@ interface Project {
   category: Category[];
   githubHref?: string;
   liveHref?: string;
+  impact?: ReactNode;
 }
 
 // James's software, AI and data projects
@@ -25,6 +26,14 @@ const projects: Project[] = [
     title: "Lintech Mobility - Automotive Operations & Service Platform",
     description:
       "A multi-application automotive operations and service management platform comprising a public business website, workshop administration system and customer self-service portal. A shared Node.js REST API and PostgreSQL database power vehicle records, appointments, work orders, mechanic assignments, inspections, inventory, invoicing, payments and service history. Automated updates use Twilio WhatsApp and BlessedTextXS SMS.",
+    impact: (
+      <>
+        Led SEO and Google Business Profile initiatives that contributed to{" "}
+        <strong>300+ new clients in five months</strong>. From June to October
+        2026, the business profile received <strong>1,206 views</strong>,
+        including 937 mobile views.
+      </>
+    ),
     tags: [
       "Node.js",
       "REST API",
@@ -185,7 +194,7 @@ const projects: Project[] = [
     githubHref: "https://github.com/MuganziJames/job-system.git",
   },
   {
-    title: "my-portfolio - Developer Portfolio",
+    title: "Portfolio Version 1",
     description:
       "A fully hand-coded responsive portfolio website showcasing work and skills with a clean design, reflecting front-end expertise and the ability to build professional web experiences from scratch.",
     tags: ["HTML", "CSS", "JavaScript"],
@@ -306,6 +315,12 @@ export default function ProjectsPage() {
               <p className="text-gray-600 leading-relaxed mb-6">
                 {project.description}
               </p>
+
+              {project.impact && (
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  {project.impact}
+                </p>
+              )}
 
 
               <div className="flex flex-wrap gap-x-4 gap-y-2 mb-6">
