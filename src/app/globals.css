@@ -187,3 +187,14 @@ input[type="submit"],
   font-size: 0.75rem;
   color: var(--text-muted);
 }
+
+/* Keep footer controls clear of mobile browser/system navigation bars. */
+.footer-safe-area {
+  padding-bottom: 3rem;
+}
+
+@media (max-width: 767px) {
+  .footer-safe-area {
+    padding-bottom: calc(3rem + max(1.5rem, env(safe-area-inset-bottom, 0px)));
+  }
+}

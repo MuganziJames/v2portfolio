@@ -38,7 +38,7 @@ export default function Footer({ ctaText, ctaHref }: FooterProps) {
   ];
 
   return (
-    <footer className="relative z-10 px-8 pb-12 md:px-16 lg:px-24">
+    <footer className="footer-safe-area relative z-10 px-8 md:px-16 lg:px-24">
       {/* CTA Link */}
       {ctaText && ctaHref && (
         <div className="mb-8">
