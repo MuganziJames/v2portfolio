@@ -254,7 +254,7 @@ export default function ProjectsPage() {
 
   return (
     <PageLayout
-      watermarkText="Projects."
+      watermarkText="Selected Work."
       footerCtaText="Get In Touch"
       footerCtaHref="/contact"
       subtleGrid
@@ -263,7 +263,7 @@ export default function ProjectsPage() {
         {/* Page Title */}
         <div className="flex items-start justify-between mb-8">
           <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-6xl lg:text-7xl font-bold">
-            Projects.
+            Selected Work.
           </h1>
           <MobileMenu />
         </div>

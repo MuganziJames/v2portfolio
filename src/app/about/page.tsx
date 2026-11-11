@@ -289,7 +289,7 @@ const recognition = [
 export default function AboutPage() {
   return (
     <PageLayout
-      watermarkText="About Me."
+      watermarkText="Beyond the Code."
       footerCtaText="Let's Continue To Projects"
       footerCtaHref="/projects"
       subtleGrid
@@ -298,7 +298,7 @@ export default function AboutPage() {
         {/* Page Title */}
         <div className="flex items-start justify-between mb-16">
           <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-6xl lg:text-7xl font-bold">
-            About Me.
+            Beyond the Code.
           </h1>
           <MobileMenu />
         </div>
