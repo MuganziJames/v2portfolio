@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { HiMenuAlt4, HiX } from "react-icons/hi";
+import { HiX } from "react-icons/hi";
 import { navLinks } from "./navigation";
 
 export default function MobileMenu() {
@@ -11,7 +11,12 @@ export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToTop = () => {
-    document.querySelector("main")?.scrollTo({ top: 0, behavior: "smooth" });
+    document.querySelector("main")?.scrollTo({ top: 0, behavior: "auto" });
+    setIsMenuOpen(false);
+  };
+
+  const handleNavigation = () => {
+    document.querySelector("main")?.scrollTo({ top: 0, behavior: "auto" });
     setIsMenuOpen(false);
   };
 
@@ -23,7 +28,15 @@ export default function MobileMenu() {
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         aria-expanded={isMenuOpen}
       >
-        {isMenuOpen ? <HiX /> : <HiMenuAlt4 />}
+        {isMenuOpen ? (
+          <HiX aria-hidden="true" />
+        ) : (
+          <span className="flex flex-col gap-1" aria-hidden="true">
+            <span className="block h-[2px] w-6 bg-current" />
+            <span className="block h-[2px] w-6 bg-current" />
+            <span className="block h-[2px] w-6 bg-current" />
+          </span>
+        )}
       </button>
 
       {isMenuOpen && (
@@ -47,7 +60,7 @@ export default function MobileMenu() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={handleNavigation}
                   className={className}
                 >
                   {link.label}

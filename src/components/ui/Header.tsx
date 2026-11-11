@@ -16,6 +16,14 @@ export default function Header() {
         : pathname === "/contact"
           ? "Contact"
           : "JM";
+  const mobilePageLabel =
+    pathname === "/about"
+      ? "About"
+      : pathname === "/projects"
+        ? "Projects"
+        : pathname === "/contact"
+          ? "Contact"
+          : "JM";
 
   const scrollToTop = () => {
     document.querySelector("main")?.scrollTo({ top: 0, behavior: "smooth" });
@@ -23,12 +31,17 @@ export default function Header() {
 
   return (
     <>
-      {/* Home keeps its compact mobile brand header. */}
-      {pathname === "/" && (
+      {/* Mobile page header */}
+      {pathname === "/" ? (
         <header className="flex md:hidden items-center justify-between px-8 py-6 relative z-50">
           <Link href="/" className="text-3xl font-bold" aria-label="Home">
             JM
           </Link>
+          <MobileMenu />
+        </header>
+      ) : (
+        <header className="flex md:hidden items-center justify-between px-8 py-6 relative z-50">
+          <span className="text-lg font-semibold">{mobilePageLabel}</span>
           <MobileMenu />
         </header>
       )}

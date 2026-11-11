@@ -1,5 +1,4 @@
 import PageLayout from "@/components/layout/PageLayout";
-import MobileMenu from "@/components/ui/MobileMenu";
 import Link from "next/link";
 import { BsBriefcase, BsCodeSlash } from "react-icons/bs";
 
@@ -296,11 +295,10 @@ export default function AboutPage() {
     >
       <div className="px-8 pt-6 md:px-16 md:pt-0 lg:px-24">
         {/* Page Title */}
-        <div className="flex items-start justify-between mb-16">
+        <div className="mb-16">
           <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-6xl lg:text-7xl font-bold">
             Beyond the Code.
           </h1>
-          <MobileMenu />
         </div>
 
         {/* Expertise Section */}
