@@ -1,4 +1,5 @@
 import PageLayout from "@/components/layout/PageLayout";
+import MobileMenu from "@/components/ui/MobileMenu";
 import Link from "next/link";
 import { BsBriefcase, BsCodeSlash } from "react-icons/bs";
 
@@ -293,11 +294,14 @@ export default function AboutPage() {
       footerCtaHref="/projects"
       subtleGrid
     >
-      <div className="px-8 md:px-16 lg:px-24">
+      <div className="px-8 pt-6 md:px-16 md:pt-0 lg:px-24">
         {/* Page Title */}
-        <h1 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl lg:text-7xl font-bold mb-16">
-          About Me.
-        </h1>
+        <div className="flex items-start justify-between mb-16">
+          <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-6xl lg:text-7xl font-bold">
+            About Me.
+          </h1>
+          <MobileMenu />
+        </div>
 
         {/* Expertise Section */}
         <section className="space-y-12 mb-24 relative">

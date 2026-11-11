@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
+import MobileMenu from "@/components/ui/MobileMenu";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -39,11 +40,14 @@ export default function ContactPage() {
       footerCtaHref="/"
       subtleGrid
     >
-      <div className="px-8 md:px-16 lg:px-24">
+      <div className="px-8 pt-6 md:px-16 md:pt-0 lg:px-24">
         {/* Page Title */}
-        <h1 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-          Let&apos;s Talk.
-        </h1>
+        <div className="flex items-start justify-between mb-6">
+          <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-6xl lg:text-7xl font-bold">
+            Let&apos;s Talk.
+          </h1>
+          <MobileMenu />
+        </div>
 
         {/* Contact Details */}
         <p className="text-lg mb-4">

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
+import MobileMenu from "@/components/ui/MobileMenu";
 import { FaGithub } from "react-icons/fa";
 import { HiOutlineExternalLink } from "react-icons/hi";
 
@@ -249,11 +250,14 @@ export default function ProjectsPage() {
       footerCtaHref="/contact"
       subtleGrid
     >
-      <div className="px-8 md:px-16 lg:px-24">
+      <div className="px-8 pt-6 md:px-16 md:pt-0 lg:px-24">
         {/* Page Title */}
-        <h1 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl lg:text-7xl font-bold mb-8">
-          Projects.
-        </h1>
+        <div className="flex items-start justify-between mb-8">
+          <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-6xl lg:text-7xl font-bold">
+            Projects.
+          </h1>
+          <MobileMenu />
+        </div>
 
         {/* Filter Tabs */}
         <div className="flex flex-wrap items-center gap-4 mb-12">
@@ -275,9 +279,11 @@ export default function ProjectsPage() {
             href="https://github.com/MuganziJames"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-gray-400 hover:text-gray-600 ml-auto underline-link"
+            className="ml-auto inline-flex items-center text-xl text-gray-400 transition-colors hover:text-gray-900"
+            aria-label="View James Muganzi on GitHub"
+            title="View GitHub"
           >
-            View GitHub
+            <FaGithub aria-hidden="true" />
           </a>
         </div>
 
