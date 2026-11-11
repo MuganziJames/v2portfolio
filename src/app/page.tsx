@@ -10,7 +10,8 @@ export default function Home() {
       noScroll={true}
     >
       <div className="h-full flex flex-col">
-        <section className="px-8 md:px-16 lg:px-24 flex-1 flex flex-col justify-center">
+        <section className="px-8 md:px-16 lg:px-24 flex-1 flex flex-col justify-center items-center text-left md:items-start">
+          <div className="w-full max-w-4xl">
           {/* Large Name Heading */}
           <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl lg:text-5xl font-bold tracking-[0.2em] uppercase mb-4 md:mb-6">
             JAMES MUGANZI
@@ -51,6 +52,7 @@ export default function Home() {
           >
             Download my resume
           </a>
+          </div>
         </section>
       </div>
     </PageLayout>

@@ -1,26 +1,25 @@
 import PageLayout from "@/components/layout/PageLayout";
 import Link from "next/link";
 import { BsBriefcase, BsCodeSlash } from "react-icons/bs";
-import { FaBrain, FaDatabase, FaServer } from "react-icons/fa";
 
 const skills = [
   {
     title: "Backend Engineering & APIs",
-    icon: <FaServer className="ml-1 inline" />,
+    // icon: <FaServer className="ml-1 inline" />,
     link: { text: "View Projects", href: "/projects" },
     description:
       "I build production-grade APIs, asynchronous services and data-intensive applications with Python, FastAPI, Flask and Node.js. My focus is on reliable architecture, secure integrations, clear API contracts and systems that support real users and operational needs.",
   },
   {
     title: "AI, Data & Automation",
-    icon: <FaBrain className="ml-1 inline" />,
+    // icon: <FaBrain className="ml-1 inline" />,
     link: { text: "Explore My Work", href: "/projects" },
     description:
       "I combine data science, machine learning, natural language processing and AI-enabled workflows to turn complex information into useful decisions. My work includes semantic job matching, climate intelligence, nutrition planning, career support and automated research workflows.",
   },
   {
     title: "Production Systems & Impact",
-    icon: <FaDatabase className="ml-1 inline" />,
+    // icon: <FaDatabase className="ml-1 inline" />,
     link: { text: "Let's Collaborate", href: "/contact" },
     description:
       "I enjoy connecting engineering quality with community needs. My projects span climate, health, jobs, mobility and sustainable development, with an emphasis on automation, accessibility, measurable outcomes and solutions that create meaningful impact in Africa.",
@@ -237,16 +236,14 @@ const education = [
   {
     title: "Associate Degree in Computer Science",
     source: "University of the People",
-    year: "In progress",
     description:
       "Relevant coursework includes object-oriented programming, algorithms, data structures, programming foundations, databases, SQL, statistics and computer systems.",
   },
   {
-    title: "Bachelor of Science in Civil & Structural Engineering",
+    title: "B.E. Civil & Structural Engineering",
     source: "University of Eldoret",
-    year: "Completed",
     description:
-      "Studied engineering mathematics, structural analysis, numerical methods and technical modelling—training that continues to strengthen my analytical approach to software and data problems.",
+      "Bachelor of Engineering in Civil & Structural Engineering, with study in engineering mathematics, structural analysis, numerical methods and technical modelling-training that continues to strengthen my analytical approach to software and data problems.",
   },
 ];
 
@@ -268,7 +265,7 @@ const recognition = [
   {
     title: "University of the People Scholarship",
     source: "$2,400 scholarship",
-    year: "Nov 2025",
+    year: "Nov 2024",
     description:
       "Awarded scholarship funding toward completion of the Associate Degree in Computer Science.",
   },
@@ -277,10 +274,10 @@ const recognition = [
     source: "U.S. Department of State",
     year: "Mar 2025",
     description:
-      "Selected as a finalist for the competitive international academic exchange program, with placement at the University of Wyoming.",
+      "Selected as a finalist for the competitive international academic exchange program, with placement at the University of Wyoming. (Didn't attend due to funding shortages).",
   },
   {
-    title: "Power Learn Project Hackathon - 3rd Place",
+    title: "PLP Hackathon - 3rd Place",
     source: "Ajirawise",
     year: "2024",
     description:
@@ -304,25 +301,26 @@ export default function AboutPage() {
 
         {/* Expertise Section */}
         <section className="space-y-12 mb-24 relative">
-          <div className="absolute left-[4px] top-8 bottom-0 w-[1px] bg-black/10"></div>
+          <div className="hidden md:block absolute left-[4px] top-8 bottom-0 w-[1px] bg-black/10"></div>
 
           {skills.map((skill) => (
             <div
               key={skill.title}
               className="border-t border-black/10 pt-8 relative"
             >
-              <div className="flex items-start justify-between mb-4">
-                <h2 className="text-xl font-semibold flex items-center">
+              <div className="mb-4">
+                <h2 className="text-xl font-semibold flex items-start">
                   <span className="section-bullet"></span>
-                  {skill.title}
-                  {skill.icon}
+                  <span>{skill.title}</span>
                 </h2>
-                <Link
-                  href={skill.link.href}
-                  className="underline-link text-sm font-medium"
-                >
-                  {skill.link.text}
-                </Link>
+                {skill.link.text && (
+                  <Link
+                    href={skill.link.href}
+                    className="underline-link text-sm font-medium block pl-6 mt-3"
+                  >
+                    {skill.link.text}
+                  </Link>
+                )}
               </div>
               <p className="text-lg leading-relaxed max-w-5xl pl-6">
                 {skill.description}
@@ -338,7 +336,7 @@ export default function AboutPage() {
           </h3>
 
           <div className="space-y-10 relative">
-            <div className="absolute left-[4px] top-0 bottom-0 w-[1px] bg-black/10"></div>
+            <div className="hidden md:block absolute left-[4px] top-0 bottom-0 w-[1px] bg-black/10"></div>
 
             {experience.map((exp) => (
               <div
@@ -347,11 +345,13 @@ export default function AboutPage() {
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
                   <div>
-                    <h4 className="text-xl font-semibold flex items-center flex-wrap gap-2">
+                    <h4 className="text-xl font-semibold flex items-start">
                       <span className="section-bullet"></span>
-                      {exp.title}
-                      <span className="font-normal text-gray-500">
-                        — {exp.company}
+                      <span>
+                        {exp.title}{" "}
+                        <span className="font-normal text-gray-500">
+                          - {exp.company}
+                        </span>
                       </span>
                     </h4>
                     <p className="text-sm text-gray-500 pl-6 mt-1">
@@ -389,7 +389,7 @@ export default function AboutPage() {
           </h3>
 
           <div className="space-y-8 relative">
-            <div className="absolute left-[4px] top-0 bottom-0 w-[1px] bg-black/10"></div>
+            <div className="hidden md:block absolute left-[4px] top-0 bottom-0 w-[1px] bg-black/10"></div>
 
             {reads.map((read) => (
               <div
@@ -397,11 +397,13 @@ export default function AboutPage() {
                 className="border-t border-black/10 pt-6 relative"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3 gap-2">
-                  <h4 className="text-xl font-semibold flex items-center flex-wrap">
+                  <h4 className="text-xl font-semibold flex items-start">
                     <span className="section-bullet"></span>
-                    {read.title}
-                    <span className="font-normal text-gray-500 ml-2">
-                      {read.source}
+                    <span>
+                      {read.title}{" "}
+                      <span className="font-normal text-gray-500">
+                        {read.source}
+                      </span>
                     </span>
                   </h4>
                   <div className="flex items-center gap-2 text-sm pl-6 md:pl-0">
@@ -423,7 +425,7 @@ export default function AboutPage() {
           </h3>
 
           <div className="space-y-8 relative">
-            <div className="absolute left-[4px] top-0 bottom-0 w-[1px] bg-black/10"></div>
+            <div className="hidden md:block absolute left-[4px] top-0 bottom-0 w-[1px] bg-black/10"></div>
 
             {education.map((item) => (
               <div
@@ -431,17 +433,15 @@ export default function AboutPage() {
                 className="border-t border-black/10 pt-6 relative"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3 gap-2">
-                  <h4 className="text-xl font-semibold flex items-center flex-wrap">
+                  <h4 className="text-xl font-semibold flex items-start">
                     <span className="section-bullet"></span>
-                    {item.title}
-                    <span className="font-normal text-gray-500 ml-2">
-                      {item.source}
+                    <span>
+                      {item.title}{" "}
+                      <span className="font-normal text-gray-500">
+                        {item.source}
+                      </span>
                     </span>
                   </h4>
-                  <div className="flex items-center gap-2 text-sm pl-6 md:pl-0">
-                    <BsCodeSlash />
-                    {item.year}
-                  </div>
                 </div>
                 <p className="text-lg leading-relaxed max-w-5xl pl-6 text-gray-700">
                   {item.description}
@@ -458,7 +458,7 @@ export default function AboutPage() {
           </h3>
 
           <div className="space-y-8 relative">
-            <div className="absolute left-[4px] top-0 bottom-0 w-[1px] bg-black/10"></div>
+            <div className="hidden md:block absolute left-[4px] top-0 bottom-0 w-[1px] bg-black/10"></div>
 
             {recognition.map((item) => (
               <div
@@ -466,11 +466,13 @@ export default function AboutPage() {
                 className="border-t border-black/10 pt-6 relative"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3 gap-2">
-                  <h4 className="text-xl font-semibold flex items-center flex-wrap">
+                  <h4 className="text-xl font-semibold flex items-start">
                     <span className="section-bullet"></span>
-                    {item.title}
-                    <span className="font-normal text-gray-500 ml-2">
-                      {item.source}
+                    <span>
+                      {item.title}{" "}
+                      <span className="font-normal text-gray-500">
+                        {item.source}
+                      </span>
                     </span>
                   </h4>
                   <div className="flex items-center gap-2 text-sm pl-6 md:pl-0">

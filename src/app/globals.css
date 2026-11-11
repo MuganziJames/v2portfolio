@@ -119,10 +119,15 @@ input[type="submit"],
 .section-bullet {
   width: 10px;
   height: 10px;
+  flex: 0 0 10px;
   border: 2px solid currentColor;
   border-radius: 50%;
   display: inline-block;
   margin-right: 12px;
+  margin-top: 0.35em;
+  background: var(--background);
+  position: relative;
+  z-index: 1;
 }
 
 /* Underline link style */
