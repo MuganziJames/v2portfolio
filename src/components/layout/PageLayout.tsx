@@ -24,7 +24,7 @@ export default function PageLayout({
 }: PageLayoutProps) {
   return (
     <div
-      className={`grid-background h-screen overflow-hidden relative flex flex-col ${
+      className={`grid-background h-screen h-[100dvh] overflow-hidden overscroll-none relative flex flex-col ${
         subtleGrid ? "grid-background--subtle" : ""
       }`}
     >
@@ -32,7 +32,7 @@ export default function PageLayout({
       <Header />
 
       <main
-        className={`relative z-10 flex-1 ${
+        className={`relative z-10 flex-1 min-h-0 w-full ${
           noScroll ? "overflow-hidden" : "overflow-y-auto"
         }`}
       >
