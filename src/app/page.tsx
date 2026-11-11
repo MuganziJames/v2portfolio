@@ -42,6 +42,15 @@ export default function Home() {
               to discuss an idea.
             </p>
           </div>
+
+          <a
+            href="https://drive.google.com/file/d/1bMkna-f8rruWpuKiILdFWCLrEnBTLKWk/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 mt-7 text-sm font-medium underline-link transition-opacity hover:opacity-60"
+          >
+            Download my resume
+          </a>
         </section>
       </div>
     </PageLayout>

@@ -18,12 +18,10 @@
 /* Grid background pattern */
 .grid-background {
   position: relative;
-  background: linear-gradient(
-    135deg,
-    var(--accent-pink) 0%,
-    var(--background) 50%,
-    var(--accent-peach) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--accent-pink) 0%,
+      var(--background) 50%,
+      var(--accent-peach) 100%);
 }
 
 .grid-background::before {
@@ -33,25 +31,24 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(
-      to right,
+  background-image: linear-gradient(to right,
       rgba(0, 0, 0, 0.04) 1px,
-      transparent 1px
-    ),
+      transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 100px 100px;
   pointer-events: none;
   z-index: 0;
-  mask-image: radial-gradient(
-    ellipse 80% 60% at 50% 50%,
-    transparent 20%,
-    black 70%
-  );
-  -webkit-mask-image: radial-gradient(
-    ellipse 80% 60% at 50% 50%,
-    transparent 20%,
-    black 70%
-  );
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 50%,
+      transparent 20%,
+      black 70%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%,
+      transparent 20%,
+      black 70%);
+}
+
+/* Keep the decorative grid quiet behind content-heavy pages. */
+.grid-background--subtle::before {
+  opacity: 0.8;
 }
 
 /* Watermark text styling */

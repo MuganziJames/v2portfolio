@@ -49,6 +49,18 @@ export default function Footer({ ctaText, ctaHref }: FooterProps) {
         </div>
       )}
 
+      {/* Resume Link */}
+      <div className="mb-8">
+        <a
+          href="https://drive.google.com/file/d/1bMkna-f8rruWpuKiILdFWCLrEnBTLKWk/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-medium underline-link transition-opacity hover:opacity-60"
+        >
+          Download Resume
+        </a>
+      </div>
+
       {/* Social Links */}
       <div className="flex items-center gap-6">
         {socialLinks.map((social) => (

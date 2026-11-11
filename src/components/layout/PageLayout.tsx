@@ -11,6 +11,7 @@ interface PageLayoutProps {
   footerCtaText?: string;
   footerCtaHref?: string;
   noScroll?: boolean;
+  subtleGrid?: boolean;
 }
 
 export default function PageLayout({
@@ -19,9 +20,14 @@ export default function PageLayout({
   footerCtaText,
   footerCtaHref,
   noScroll = false,
+  subtleGrid = false,
 }: PageLayoutProps) {
   return (
-    <div className="grid-background h-screen overflow-hidden relative flex flex-col">
+    <div
+      className={`grid-background h-screen overflow-hidden relative flex flex-col ${
+        subtleGrid ? "grid-background--subtle" : ""
+      }`}
+    >
       <CustomCursor />
       <Header />
 

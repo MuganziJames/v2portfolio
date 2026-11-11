@@ -3,41 +3,55 @@ import Link from "next/link";
 import { BsBriefcase, BsCodeSlash } from "react-icons/bs";
 import { FaBrain, FaDatabase, FaServer } from "react-icons/fa";
 
-// Expertise data
 const skills = [
   {
     title: "Backend Engineering & APIs",
     icon: <FaServer className="ml-1 inline" />,
     link: { text: "View Projects", href: "/projects" },
     description:
-      "I build production-grade APIs, asynchronous services and data-intensive applications with Python and modern backend tools. My focus is on reliable architecture, secure integrations, clear interfaces and systems that can support real users and real operational needs.",
+      "I build production-grade APIs, asynchronous services and data-intensive applications with Python, FastAPI, Flask and Node.js. My focus is on reliable architecture, secure integrations, clear API contracts and systems that support real users and operational needs.",
   },
   {
     title: "AI, Data & Automation",
     icon: <FaBrain className="ml-1 inline" />,
     link: { text: "Explore My Work", href: "/projects" },
     description:
-      "I combine data science, machine learning, natural language processing and AI-enabled workflows to turn complex information into useful decisions. I have worked on intelligent job matching, climate intelligence, nutrition planning, career support and automated research workflows.",
+      "I combine data science, machine learning, natural language processing and AI-enabled workflows to turn complex information into useful decisions. My work includes semantic job matching, climate intelligence, nutrition planning, career support and automated research workflows.",
   },
   {
     title: "Production Systems & Impact",
     icon: <FaDatabase className="ml-1 inline" />,
     link: { text: "Let's Collaborate", href: "/contact" },
     description:
-      "I enjoy building technology that connects engineering quality with community needs. My projects span climate, health, jobs, mobility and sustainable development, with an emphasis on automation, accessibility, measurable outcomes and solutions that create meaningful impact in Africa.",
+      "I enjoy connecting engineering quality with community needs. My projects span climate, health, jobs, mobility and sustainable development, with an emphasis on automation, accessibility, measurable outcomes and solutions that create meaningful impact in Africa.",
   },
 ];
 
-// Experience data
-const experience = [
+interface Experience {
+  title: string;
+  company: string;
+  type?: string;
+  period: string;
+  location?: string;
+  highlights: string[];
+  skills: string[];
+}
+
+const experience: Experience[] = [
   {
     title: "Researcher",
     company: "CloudFactory",
     type: "Contract",
     period: "Nov 2025 - Present",
     location: "Remote · Nairobi County, Kenya",
-    description:
-      "Verify public-source information through a seven-stage research, cross-checking and classification process before converting findings into operational records. Process 50+ research records per work cycle, cross-check 10-15 independent sources, audit records for completeness and maintain source links, exception notes and verification evidence for distributed teams.",
+    highlights: [
+      "Verify public-source information through a seven-stage research, cross-checking and classification process before converting findings into operational records.",
+      "Process 50+ research records per work cycle while maintaining accuracy, consistency and source traceability.",
+      "Cross-check 10-15 independent sources when information conflicts, resolving discrepancies before submitting records for review.",
+      "Audit research records against completeness, classification accuracy, evidence reliability and formatting consistency.",
+      "Maintain source links, exception notes and verification evidence so reviewers can validate findings without repeating initial research.",
+      "Submit verified records to distributed teams within project deadlines while protecting confidential data and following client guidelines.",
+    ],
     skills: [
       "Research Verification",
       "Source Traceability",
@@ -46,96 +60,231 @@ const experience = [
     ],
   },
   {
-    title: "Backend",
+    title: "Backend Developer",
     company: "Blueprint AI",
-    type: "Professional Experience",
-    period: "",
-    location: "",
-    description:
-      "Backend engineering experience contributing to AI-enabled workflows, production services and data-driven applications.",
-    skills: ["Python", "APIs", "Automation"],
+    type: "Part-time",
+    period: "Aug 2024 - Present",
+    location: "Eldoret, Kenya",
+    highlights: [
+      "Maintain Python and FastAPI services across authentication, business logic, data processing and frontend integration workflows.",
+      "Develop 20+ FastAPI endpoints using Pydantic, SQLAlchemy and PostgreSQL, standardizing validation and API response contracts.",
+      "Expose Python machine-learning outputs through REST interfaces so frontend features can use model capabilities without direct dependencies on model code.",
+      "Tune database performance across SQL queries, ORM operations and serialization to reduce redundant processing in backend services.",
+      "Troubleshoot failures across APIs, PostgreSQL, authentication and external services, implementing targeted fixes.",
+      "Ship Python backend changes alongside React-facing features using Git-based collaboration and iterative releases.",
+    ],
+    skills: [
+      "Python",
+      "FastAPI",
+      "Pydantic",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "React Integration",
+    ],
   },
   {
-    title: "Data Science",
+    title: "Data Scientist / Backend Engineer",
     company: "Blueprint AI",
-    type: "Professional Experience",
-    period: "",
-    location: "",
-    description:
-      "Data science experience focused on turning complex data into insights and practical tools that support better decisions.",
-    skills: ["Data Science", "Machine Learning", "Data Analysis"],
+    type: "Full-time",
+    period: "Dec 2023 - Aug 2024",
+    location: "Remote · Nairobi County, Kenya",
+    highlights: [
+      "Built Python data workflows covering ingestion, preprocessing, feature engineering, training and evaluation.",
+      "Transformed multi-source datasets with pandas and NumPy into consistent, model-ready inputs for client analytics work.",
+      "Evaluated supervised scikit-learn models through iterative validation and feature refinement to strengthen predictive performance.",
+      "Standardized recurring preprocessing steps into reusable Python pipelines for cleaning, transformation and feature preparation.",
+      "Presented model findings through Matplotlib and Seaborn reports, translating technical results into stakeholder-ready visuals.",
+      "Supported deployments through model validation, backend integration and production monitoring.",
+    ],
+    skills: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "Matplotlib",
+      "Seaborn",
+    ],
   },
   {
-    title: "Technology Contributor",
+    title: "IT Automation Apprentice",
     company: "Mentor Me Collective",
-    type: "Professional Experience",
-    period: "",
-    location: "",
-    description:
-      "Contributed to technology and community-focused work through collaboration, problem solving and practical software development.",
-    skills: ["Collaboration", "Problem Solving", "Community"],
+    type: "Full-time apprenticeship",
+    period: "Jul 2025 - Jan 2026",
+    location: "Remote · United States",
+    highlights: [
+      "Built 10+ Python scripts for repetitive IT tasks, replacing manual steps with consistent, repeatable execution.",
+      "Automated file processing, input validation and CLI utilities using functions and exception handling.",
+      "Converted multi-step manual procedures into reusable scripts that were easier to rerun and troubleshoot.",
+      "Collaborated through branching, pull requests and tracked revisions across remote assignments.",
+      "Prototyped cloud-aware automation and infrastructure checks to assist with technical troubleshooting and operational support.",
+      "Diagnosed Python script failures using debugging, configuration management and version-controlled fixes.",
+    ],
+    skills: [
+      "Python Automation",
+      "CLI Utilities",
+      "Debugging",
+      "Git/GitHub",
+      "Configuration Management",
+    ],
   },
   {
-    title: "AI/ML",
-    company: "PLP",
-    type: "Professional Experience",
-    period: "",
-    location: "",
-    description:
-      "Applied artificial intelligence and machine learning skills through practical projects and collaborative development work.",
-    skills: ["Artificial Intelligence", "Machine Learning", "Python"],
+    title: "AI & Machine Learning Trainee",
+    company: "Power Learn Project",
+    type: "Training",
+    period: "Jun 2024 - Sep 2024",
+    location: "Nairobi County, Kenya",
+    highlights: [
+      "Produced a climate-risk prototype covering drought, flooding, food insecurity and crop yields.",
+      "Prepared environmental datasets through cleaning, transformation and feature exploration using Python, pandas and NumPy.",
+      "Analyzed climate-risk data using supervised machine learning and statistical methods, converting model output into decision-support insights.",
+      "Translated natural-language questions into analytical queries so non-technical users could explore climate-risk findings.",
+      "Unified environmental datasets, model predictions and natural-language output in an interactive East African prototype.",
+      "Completed the core backend in 12 hours during a 24-hour hackathon, demonstrating rapid delivery under a fixed deadline.",
+    ],
+    skills: [
+      "Machine Learning",
+      "Climate Data",
+      "Natural Language Queries",
+      "Python",
+      "Streamlit",
+    ],
   },
   {
-    title: "Developer",
-    company: "PLP",
-    type: "Professional Experience",
-    period: "",
-    location: "",
-    description:
-      "Built software projects while strengthening full-stack development, teamwork, version control and delivery skills.",
-    skills: ["Software Development", "Git/GitHub", "Teamwork"],
+    title: "Software Engineering Trainee",
+    company: "Power Learn Project",
+    type: "Full-time",
+    period: "Feb 2024 - Jun 2024",
+    location: "Remote",
+    highlights: [
+      "Built full-stack applications across Python, JavaScript, SQL, HTML and CSS.",
+      "Connected REST-style backend logic and relational data to browser interfaces, supporting data retrieval and user updates.",
+      "Created Ajirawise, a job-discovery and alert platform that earned 3rd place at the Power Learn Project hackathon.",
+      "Implemented vacancy collection, user-preference filtering, matching logic and notifications for job alerts.",
+      "Coordinated code changes through Git/GitHub version control, collaborative debugging and iterative project reviews.",
+      "Completed software engineering training across backend APIs, databases, frontend development and agile delivery.",
+    ],
+    skills: [
+      "Python",
+      "JavaScript",
+      "SQL",
+      "REST APIs",
+      "Git/GitHub",
+      "Agile Delivery",
+    ],
   },
   {
-    title: "Technology Professional",
+    title: "Mobile App Development Trainee",
     company: "TechCrush",
-    type: "Professional Experience",
-    period: "",
-    location: "",
-    description:
-      "Worked across software and mobile development projects with a focus on building useful digital products and learning through collaborative engineering.",
-    skills: ["React Native", "TypeScript", "Mobile Development"],
+    type: "Full-time",
+    period: "Mar 2024 - Jun 2024",
+    location: "Remote · Nigeria",
+    highlights: [
+      "Built React Native applications for budgeting, health information and location-aware utility use cases.",
+      "Translated requirements into shared screens, components and navigation flows across mobile prototypes.",
+      "Connected React Native interfaces to asynchronous APIs for reading and updating application data.",
+      "Consolidated repeated screen logic into reusable components and state management to simplify maintenance.",
+      "Added device and location-aware features to utility prototypes, extending functionality beyond static mobile screens.",
+      "Shipped mobile features in a remote development environment using source control, debugging and iterative feedback.",
+    ],
+    skills: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "API Integration",
+      "State Management",
+    ],
   },
 ];
 
-// Skills grouped for the existing skills list design
 const reads = [
   {
-    title: "Backend & Development",
-    source: "Python · Flask · Django · REST APIs",
+    title: "Backend Engineering",
+    source: "Python · FastAPI · Flask · Node.js",
     year: "Core stack",
     description:
-      "Python, Flask, Django, REST API development, asynchronous services, JWT authentication, role-based access control and secure application architecture.",
+      "Python, FastAPI, Flask, async/await, asyncio, Pydantic, SQLAlchemy, REST APIs, Node.js and Express.js.",
   },
   {
-    title: "AI & Machine Learning",
-    source: "ML · NLP · Deep Learning",
+    title: "Databases & Search",
+    source: "PostgreSQL · pgvector · Redis",
     year: "Core stack",
     description:
-      "Data Science, Machine Learning, Deep Learning, Natural Language Processing, TensorFlow, PyTorch and OpenAI-powered workflows.",
+      "PostgreSQL, pgvector, HNSW, vector embeddings, semantic search, Redis, Supabase, Alembic and SQL optimization.",
   },
   {
-    title: "Data & Visualization",
-    source: "SQL · Pandas · NumPy",
+    title: "Security & Reliability",
+    source: "JWT · OAuth2 · RBAC · Testing",
     year: "Core stack",
     description:
-      "SQL, PostgreSQL, Pandas, NumPy, Scikit-learn, data modeling, data visualization and tools for building clear, data-driven insights.",
+      "JWT, OAuth2, RBAC, API rate limiting, pytest, caching, Celery, background workers and validation.",
   },
   {
-    title: "Tools & Delivery",
-    source: "Cloud · Git · Streamlit",
+    title: "AI & Data",
+    source: "OpenAI · RAG · NLP · ML",
     year: "Core stack",
     description:
-      "Streamlit, Git/GitHub, cloud basics, Docker, deployment workflows and the practical tools needed to take ideas from development to usable products.",
+      "OpenAI APIs, LLM integration, RAG patterns, NLP, scikit-learn, pandas and NumPy.",
+  },
+  {
+    title: "Frontend & Delivery",
+    source: "React · Next.js · Docker · CI/CD",
+    year: "Core stack",
+    description:
+      "React, Next.js, TypeScript, JavaScript, Tailwind CSS, React Native, Docker, GitHub Actions, CI/CD, DigitalOcean and AWS.",
+  },
+];
+const education = [
+  {
+    title: "Associate Degree in Computer Science",
+    source: "University of the People",
+    year: "In progress",
+    description:
+      "Relevant coursework includes object-oriented programming, algorithms, data structures, programming foundations, databases, SQL, statistics and computer systems.",
+  },
+  {
+    title: "Bachelor of Science in Civil & Structural Engineering",
+    source: "University of Eldoret",
+    year: "Completed",
+    description:
+      "Studied engineering mathematics, structural analysis, numerical methods and technical modelling—training that continues to strengthen my analytical approach to software and data problems.",
+  },
+];
+
+const recognition = [
+  {
+    title: "Google IT Automation with Python Professional Certificate",
+    source: "Google / Coursera",
+    year: "Nov 2025",
+    description:
+      "Completed the six-course professional program covering Python scripting, Git/GitHub, troubleshooting, debugging, configuration management, automation and IT operations.",
+  },
+  {
+    title: "Intermediate Python",
+    source: "DataCamp",
+    year: "Sep 2025",
+    description:
+      "Practical training in Python programming, functions, data structures, control flow and data-processing techniques.",
+  },
+  {
+    title: "University of the People Scholarship",
+    source: "$2,400 scholarship",
+    year: "Nov 2025",
+    description:
+      "Awarded scholarship funding toward completion of the Associate Degree in Computer Science.",
+  },
+  {
+    title: "Global UGRAD Program Finalist",
+    source: "U.S. Department of State",
+    year: "Mar 2025",
+    description:
+      "Selected as a finalist for the competitive international academic exchange program, with placement at the University of Wyoming.",
+  },
+  {
+    title: "Power Learn Project Hackathon - 3rd Place",
+    source: "Ajirawise",
+    year: "2024",
+    description:
+      "Recognized for a practical approach to improving job discovery and access to employment opportunities.",
   },
 ];
 
@@ -145,6 +294,7 @@ export default function AboutPage() {
       watermarkText="About Me."
       footerCtaText="Let's Continue To Projects"
       footerCtaHref="/projects"
+      subtleGrid
     >
       <div className="px-8 md:px-16 lg:px-24">
         {/* Page Title */}
@@ -152,9 +302,8 @@ export default function AboutPage() {
           About Me.
         </h1>
 
-        {/* Skills Section */}
+        {/* Expertise Section */}
         <section className="space-y-12 mb-24 relative">
-          {/* Vertical Line */}
           <div className="absolute left-[4px] top-8 bottom-0 w-[1px] bg-black/10"></div>
 
           {skills.map((skill) => (
@@ -189,15 +338,14 @@ export default function AboutPage() {
           </h3>
 
           <div className="space-y-10 relative">
-            {/* Vertical Line */}
             <div className="absolute left-[4px] top-0 bottom-0 w-[1px] bg-black/10"></div>
 
             {experience.map((exp) => (
               <div
-                key={exp.title + exp.company}
+                key={exp.title + exp.company + exp.period}
                 className="border-t border-black/10 pt-6 relative"
               >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3 gap-2">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
                   <div>
                     <h4 className="text-xl font-semibold flex items-center flex-wrap gap-2">
                       <span className="section-bullet"></span>
@@ -206,23 +354,23 @@ export default function AboutPage() {
                         — {exp.company}
                       </span>
                     </h4>
-                    {(exp.type || exp.location) && (
-                      <p className="text-sm text-gray-500 pl-6 mt-1">
-                        {[exp.type, exp.location].filter(Boolean).join(" · ")}
-                      </p>
-                    )}
+                    <p className="text-sm text-gray-500 pl-6 mt-1">
+                      {[exp.type, exp.location].filter(Boolean).join(" · ")}
+                    </p>
                   </div>
-                  {exp.period && (
-                    <div className="flex items-center gap-2 text-sm pl-6 md:pl-0">
-                      <BsBriefcase />
-                      {exp.period}
-                    </div>
-                  )}
+                  <div className="flex items-center gap-2 text-sm pl-6 md:pl-0">
+                    <BsBriefcase />
+                    {exp.period}
+                  </div>
                 </div>
-                <p className="text-base leading-relaxed max-w-5xl pl-6 text-gray-700 mb-3">
-                  {exp.description}
-                </p>
-                <div className="flex flex-wrap gap-2 pl-6">
+
+                <ul className="pl-10 max-w-5xl space-y-2 text-base leading-relaxed text-gray-700 list-disc marker:text-gray-400">
+                  {exp.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-2 pl-6 mt-4">
                   {exp.skills.map((skill) => (
                     <span key={skill} className="tech-tag">
                       {skill}
@@ -234,10 +382,10 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* My Skills Section */}
+        {/* Technical Skills Section */}
         <section className="mb-24">
           <h3 className="font-[family-name:var(--font-playfair)] text-3xl font-semibold mb-12">
-            My Skills.
+            Technical Skills.
           </h3>
 
           <div className="space-y-8 relative">
@@ -248,7 +396,7 @@ export default function AboutPage() {
                 key={read.title}
                 className="border-t border-black/10 pt-6 relative"
               >
-                <div className="flex items-start justify-between mb-3">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3 gap-2">
                   <h4 className="text-xl font-semibold flex items-center flex-wrap">
                     <span className="section-bullet"></span>
                     {read.title}
@@ -256,13 +404,82 @@ export default function AboutPage() {
                       {read.source}
                     </span>
                   </h4>
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center gap-2 text-sm pl-6 md:pl-0">
                     <BsCodeSlash />
                     {read.year}
                   </div>
                 </div>
                 <p className="text-lg leading-relaxed max-w-5xl pl-6 text-gray-700">
                   {read.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+        {/* Education Section */}
+        <section className="mb-24">
+          <h3 className="font-[family-name:var(--font-playfair)] text-3xl font-semibold mb-12">
+            Education.
+          </h3>
+
+          <div className="space-y-8 relative">
+            <div className="absolute left-[4px] top-0 bottom-0 w-[1px] bg-black/10"></div>
+
+            {education.map((item) => (
+              <div
+                key={item.title}
+                className="border-t border-black/10 pt-6 relative"
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3 gap-2">
+                  <h4 className="text-xl font-semibold flex items-center flex-wrap">
+                    <span className="section-bullet"></span>
+                    {item.title}
+                    <span className="font-normal text-gray-500 ml-2">
+                      {item.source}
+                    </span>
+                  </h4>
+                  <div className="flex items-center gap-2 text-sm pl-6 md:pl-0">
+                    <BsCodeSlash />
+                    {item.year}
+                  </div>
+                </div>
+                <p className="text-lg leading-relaxed max-w-5xl pl-6 text-gray-700">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Certifications and Recognition Section */}
+        <section className="mb-24">
+          <h3 className="font-[family-name:var(--font-playfair)] text-3xl font-semibold mb-12">
+            Certifications & Recognition.
+          </h3>
+
+          <div className="space-y-8 relative">
+            <div className="absolute left-[4px] top-0 bottom-0 w-[1px] bg-black/10"></div>
+
+            {recognition.map((item) => (
+              <div
+                key={item.title}
+                className="border-t border-black/10 pt-6 relative"
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3 gap-2">
+                  <h4 className="text-xl font-semibold flex items-center flex-wrap">
+                    <span className="section-bullet"></span>
+                    {item.title}
+                    <span className="font-normal text-gray-500 ml-2">
+                      {item.source}
+                    </span>
+                  </h4>
+                  <div className="flex items-center gap-2 text-sm pl-6 md:pl-0">
+                    <BsCodeSlash />
+                    {item.year}
+                  </div>
+                </div>
+                <p className="text-lg leading-relaxed max-w-5xl pl-6 text-gray-700">
+                  {item.description}
                 </p>
               </div>
             ))}

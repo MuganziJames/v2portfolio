@@ -31,6 +31,7 @@ export default function ContactPage() {
       watermarkText="Contact."
       footerCtaText="Go Back Home"
       footerCtaHref="/"
+      subtleGrid
     >
       <div className="px-8 md:px-16 lg:px-24">
         {/* Page Title */}

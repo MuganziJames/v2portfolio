@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   title: "James Muganzi - Python Backend Engineer",
   description:
     "Backend Engineer building production-grade APIs, asynchronous services, AI-enabled workflows, automation systems and data-intensive applications.",
+  icons: {
+    icon: "/icon.jpg",
+    shortcut: "/icon.jpg",
+    apple: "/icon.jpg",
+  },
 };
 
 export default function RootLayout({
