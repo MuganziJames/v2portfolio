@@ -24,7 +24,7 @@ export default function MobileMenu() {
     <>
       <button
         onClick={() => setIsMenuOpen((open) => !open)}
-        className="relative md:hidden shrink-0 mt-2 text-2xl leading-none z-50"
+        className="relative md:hidden shrink-0 -mt-1 text-2xl leading-none z-50"
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         aria-expanded={isMenuOpen}
       >
