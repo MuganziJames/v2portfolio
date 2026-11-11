@@ -24,7 +24,7 @@ export default function PageLayout({
 }: PageLayoutProps) {
   return (
     <div
-      className={`grid-background h-screen h-[100dvh] overflow-hidden overscroll-none relative flex flex-col ${
+      className={`grid-background h-screen h-[100dvh] overflow-hidden overscroll-y-auto relative flex flex-col ${
         subtleGrid ? "grid-background--subtle" : ""
       }`}
     >
